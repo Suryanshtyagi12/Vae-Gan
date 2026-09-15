@@ -5,12 +5,12 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?logo=streamlit&logoColor=white)](https://YOUR_STREAMLIT_APP_URL_HERE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?logo=streamlit&logoColor=white)](https://vae-gan-2kzdywiq6f2vudrmuz9wqt.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://YOUR_STREAMLIT_APP_URL_HERE)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://vae-gan-2kzdywiq6f2vudrmuz9wqt.streamlit.app/)
 
-**[🚀 Live Demo Link (Replace with your app URL)](https://YOUR_STREAMLIT_APP_URL_HERE)**
+**[🚀 Launch Live Streamlit Demo](https://vae-gan-2kzdywiq6f2vudrmuz9wqt.streamlit.app/)**
 
 ---
 
@@ -123,9 +123,9 @@ You can host this live interactive demo for free on **Streamlit Community Cloud*
    - Set **Main file path**: `app.py`.
    - Click **"Deploy!"**.
 
-3. **Add Your Link to the README**:
-   - Once deployed, copy your app URL (e.g., `https://vae-gan-studio.streamlit.app`).
-   - In [README.md](README.md), replace `https://YOUR_STREAMLIT_APP_URL_HERE` with your live URL.
+3. **Access Your Live App**:
+   - The interactive studio is deployed and accessible at:
+     **[https://vae-gan-2kzdywiq6f2vudrmuz9wqt.streamlit.app/](https://vae-gan-2kzdywiq6f2vudrmuz9wqt.streamlit.app/)**
 
 ---
 
