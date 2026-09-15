@@ -141,11 +141,25 @@ def load_vae(filepath):
         return None, False
 
 
+def resolve_weight_path(filename):
+    """Checks weights/ directory first, then root directory."""
+    candidates = [
+        os.path.join(os.path.dirname(__file__), "weights", filename),
+        os.path.join("weights", filename),
+        os.path.join(os.path.dirname(__file__), filename),
+        filename
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            return p
+    return filename
+
+
 # Load all 4 models
-dcgan_model, dcgan_ready = load_smart_gan('gan_weights.pth')
-mnist_gan_model, mnist_gan_ready = load_smart_gan('gan_mnist_weights.pth')
-vae_model, vae_ready = load_vae('vae_weights.pth')
-cgan_model, cgan_ready = load_cgan('cgan_mnist_weights.pth')
+dcgan_model, dcgan_ready = load_smart_gan(resolve_weight_path('gan_weights.pth'))
+mnist_gan_model, mnist_gan_ready = load_smart_gan(resolve_weight_path('gan_mnist_weights.pth'))
+vae_model, vae_ready = load_vae(resolve_weight_path('vae_weights.pth'))
+cgan_model, cgan_ready = load_cgan(resolve_weight_path('cgan_mnist_weights.pth'))
 
 # Fallbacks if weights not yet saved
 if dcgan_model is None:

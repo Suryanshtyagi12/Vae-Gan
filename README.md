@@ -5,10 +5,16 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B.svg?logo=streamlit&logoColor=white)](https://YOUR_STREAMLIT_APP_URL_HERE)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Live Features](#-studio-features--visual-results) • [Architecture Matrix](#-architecture-matrix) • [Quickstart](#-quickstart) • [Theory & Viva Q&A](#-key-theoretical-insights)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://YOUR_STREAMLIT_APP_URL_HERE)
+
+**[🚀 Live Demo Link (Replace with your app URL)](https://YOUR_STREAMLIT_APP_URL_HERE)**
+
+---
+
+[Live Features](#-studio-features--visual-results) • [Architecture Matrix](#-architecture-matrix) • [Deploy on Streamlit](#-how-to-deploy-on-streamlit-cloud) • [Quickstart](#-quickstart) • [Theory & Viva Q&A](#-key-theoretical-insights)
 
 ---
 
@@ -16,21 +22,21 @@
 
 ## 📌 Overview
 
-This project implements and evaluates four foundational deep generative architectures built from scratch with **PyTorch** across **MNIST** and **Fashion-MNIST**:
+This repository is a comprehensive generative modeling suite implementing four foundational architectures from scratch in **PyTorch** across **MNIST** and **Fashion-MNIST**:
 
-1. **Variational Autoencoder (VAE)** — Probabilistic density modeling via ELBO optimization.
+1. **Variational Autoencoder (VAE)** — Probabilistic density modeling via ELBO optimization and reparameterization trick.
 2. **Vanilla GAN** — Multi-layer perceptron adversarial minimax game.
-3. **DCGAN** — Deep convolutional generative network using transposed convolutions and batch normalization.
+3. **DCGAN** — Deep convolutional generative network using transposed 2D convolutions and batch normalization.
 4. **Conditional GAN (cGAN)** — Supervised generative synthesis driven by class-label embeddings.
 
-All models are deployed inside an interactive **Streamlit Studio** (`app.py`) for live inference, latent interpolation, and head-to-head empirical comparison.
+All models are integrated into an interactive **Streamlit Web Studio** (`app.py`) for real-time sampling, latent interpolation, and head-to-head empirical comparison.
 
 ---
 
 ## 🖼️ Studio Features & Visual Results
 
 ### 1. User-Controlled Generation (Conditional GAN)
-> Specify any target digit ($0 \to 9$) and synthesize targeted handwriting variations on demand.
+> Specify any target digit ($0 \to 9$) to synthesize tailored handwriting variations or render complete digit sequences on demand.
 
 <div align="center">
   <img src="assets/cgan_digits.png" alt="cGAN Digit Sequence" width="850"/>
@@ -78,7 +84,52 @@ All models are deployed inside an interactive **Streamlit Studio** (`app.py`) fo
 
 ---
 
-## 🚀 Quickstart
+## 📂 Repository Structure
+
+```plaintext
+├── app.py                      # Interactive 5-tab Streamlit Studio (live UI)
+├── gan.py                      # Standalone CLI training script for Vanilla GAN
+├── PROJECT_REPORT.md           # Comprehensive presentation & viva notes
+├── requirements.txt            # Minimal runtime dependencies
+├── LICENSE                     # MIT License
+├── README.md                   # Project documentation & visual guide
+│
+├── assets/                     # Demonstration figures & comparison plots
+│   ├── cgan_digits.png
+│   ├── dcgan_fashion.png
+│   ├── latent_morphing.png
+│   └── vae_vs_gan.png
+│
+└── weights/                    # Pretrained PyTorch model checkpoints
+    ├── cgan_mnist_weights.pth
+    ├── gan_mnist_weights.pth
+    ├── gan_weights.pth
+    └── vae_weights.pth
+```
+
+---
+
+## ☁️ How to Deploy on Streamlit Cloud
+
+You can host this live interactive demo for free on **Streamlit Community Cloud** in 3 simple steps:
+
+1. **Sign in to Streamlit Community Cloud**:
+   - Go to [share.streamlit.io](https://share.streamlit.io/) and sign in with your GitHub account.
+
+2. **Deploy the App**:
+   - Click **"Create app"** (or **"New app"**).
+   - Select your repository: `Suryanshtyagi12/Vae-Gan`.
+   - Set **Branch**: `main`.
+   - Set **Main file path**: `app.py`.
+   - Click **"Deploy!"**.
+
+3. **Add Your Link to the README**:
+   - Once deployed, copy your app URL (e.g., `https://vae-gan-studio.streamlit.app`).
+   - In [README.md](README.md), replace `https://YOUR_STREAMLIT_APP_URL_HERE` with your live URL.
+
+---
+
+## 🚀 Quickstart & Local Setup
 
 ### 1. Clone & Install
 ```bash
@@ -93,7 +144,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-### 2. Launch the Interactive Studio
+### 2. Launch the Interactive Studio Locally
 ```bash
 streamlit run app.py
 ```
@@ -102,26 +153,6 @@ Open **`http://localhost:8501`** in your browser.
 ### 3. (Optional) Train Vanilla GAN via CLI
 ```bash
 python gan.py --n_epochs 100 --batch_size 64 --lr 0.0002
-```
-
----
-
-## 📂 Repository Structure
-
-```plaintext
-├── app.py                      # Interactive 5-tab Streamlit Studio (live UI)
-├── gan.py                      # Standalone CLI training script for Vanilla GAN
-├── PROJECT_REPORT.md           # Comprehensive presentation & viva notes
-├── requirements.txt            # Minimal runtime dependencies
-├── assets/                     # Visual demonstration outputs & comparisons
-│   ├── cgan_digits.png
-│   ├── vae_vs_gan.png
-│   ├── latent_morphing.png
-│   └── dcgan_fashion.png
-├── cgan_mnist_weights.pth      # Pretrained weights: Conditional GAN
-├── gan_mnist_weights.pth       # Pretrained weights: Vanilla GAN
-├── gan_weights.pth             # Pretrained weights: DCGAN (Fashion-MNIST)
-└── vae_weights.pth             # Pretrained weights: VAE
 ```
 
 ---
